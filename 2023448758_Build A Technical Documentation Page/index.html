@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unity Game Engine Documentation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <nav id="navbar">
+  <header>Unity Game Engine</header>
+  <a class="nav-link" href="#Introduction_to_Unity">Introduction_to_Unity</a>
+  <a class="nav-link" href="#GameObjects_and_Components">GameObjects_and_Components</a>
+  <a class="nav-link" href="#Scenes_and_Prefabs">Scenes_and_Prefabs</a>
+  <a class="nav-link" href="#Scripting_with_C_Sharp">Scripting_with_C_Sharp</a>
+  <a class="nav-link" href="#Physics_and_Collisions">Physics_and_Collisions</a>
+</nav>
+
+
+  <main id="main-doc">
+    <section class="main-section" id="Introduction_to_Unity">
+      <header>Introduction_to_Unity</header>
+      <p>Unity is a cross-platform game engine used to develop 2D, 3D, augmented reality (AR), and virtual reality (VR) experiences.</p>
+      <p>It supports deployment to multiple platforms including mobile, PC, consoles, and the web.</p>
+      <code>UnityEditor.EditorApplication.isPlaying = false;</code>
+    </section>
+
+    <section class="main-section" id="GameObjects_and_Components">
+      <header>GameObjects_and_Components</header>
+      <p>Everything in a Unity scene is a GameObject. Components add functionality to these GameObjects.</p>
+      <p>For example, a Rigidbody component allows a GameObject to obey the laws of physics.</p>
+      <ul>
+        <li>Transform</li>
+        <li>Mesh Renderer</li>
+        <li>Collider</li>
+        <li>Rigidbody</li>
+        <li>Audio Source</li>
+      </ul>
+      <code>gameObject.AddComponent<Rigidbody>();</code>
+    </section>
+
+    <section class="main-section" id="Scenes_and_Prefabs">
+      <header>Scenes_and_Prefabs</header>
+      <p>Scenes are individual levels or screens in a Unity game. Prefabs are reusable GameObject templates.</p>
+      <p>Using prefabs, you can maintain consistency and improve workflow efficiency.</p>
+      <code>Instantiate(enemyPrefab, transform.position, transform.rotation);</code>
+    </section>
+
+    <section class="main-section" id="Scripting_with_C_Sharp">
+      <header>Scripting_with_C_Sharp</header>
+      <p>C# is the primary language used in Unity. Scripts define behavior for GameObjects.</p>
+      <p>MonoBehaviour is the base class from which every Unity script derives.</p>
+      <code>
+        void Start() {
+          Debug.Log("Game Started");
+        }
+      </code>
+      <p>The Update method is called once per frame and is used to implement behaviors over time.</p>
+      <code>
+        void Update() {
+          transform.Translate(Vector3.forward * Time.deltaTime);
+        }
+      </code>
+    </section>
+
+    <section class="main-section" id="Physics_and_Collisions">
+      <header>Physics_and_Collisions</header>
+      <p>Unity provides a powerful physics engine with built-in support for 2D and 3D collisions.</p>
+      <p>Rigidbodies and Colliders are essential for physics-based interactions.</p>
+      <ul>
+        <li>Box Collider</li>
+        <li>Sphere Collider</li>
+        <li>Capsule Collider</li>
+        <li>Mesh Collider</li>
+        <li>Character Controller</li>
+      </ul>
+      <code>
+        void OnCollisionEnter(Collision collision) {
+          Debug.Log("Collision Detected with " + collision.gameObject.name);
+        }
+      </code>
+    </section>
+  </main>
+</body>
+
+</html>
